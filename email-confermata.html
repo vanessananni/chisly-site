@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Email confermata · Chisly</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  // Supabase rimanda qui dopo il link di conferma, aggiungendo all'indirizzo
+  // i token della sessione (#access_token=...) oppure un errore
+  // (#error=...&error_code=otp_expired). La pagina non li usa: li toglie
+  // subito dall'indirizzo e dalla cronologia e mostra solo l'esito.
+  (function () {
+    var raw = (location.hash || '').replace(/^#/, '') + '&' + (location.search || '').replace(/^\?/, '');
+    var params = {};
+    raw.split('&').forEach(function (pair) {
+      if (!pair) return;
+      var i = pair.indexOf('=');
+      var key = decodeURIComponent(i < 0 ? pair : pair.slice(0, i));
+      params[key] = i < 0 ? '' : decodeURIComponent(pair.slice(i + 1).replace(/\+/g, ' '));
+    });
+    var state = 'ok';
+    if (params.error || params.error_code) {
+      state = params.error_code === 'otp_expired' ? 'expired' : 'error';
+    }
+    try { history.replaceState(null, '', location.pathname); } catch (e) {}
+    document.documentElement.setAttribute('data-state', state);
+  })();
+</script>
+<style>
+  .state { display: none; }
+  html[data-state="ok"] .state-ok,
+  html[data-state="expired"] .state-expired,
+  html[data-state="error"] .state-error,
+  html:not([data-state]) .state-ok { display: block; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./">Chisly</a>
+  <nav><a href="privacy.html">Privacy</a><a href="termini.html">Termini</a><a href="#en">EN</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="state state-ok">
+  <h1>Email confermata 🎁</h1>
+  <p>Il tuo account Chisly è attivo. Torna nell'app e accedi con la tua email e la tua password.</p>
+  <p class="updated">Puoi chiudere questa pagina.</p>
+</div>
+
+<div class="state state-expired">
+  <h1>Il link non è più valido</h1>
+  <p>Il link di conferma è scaduto oppure è già stato usato. Se hai già confermato, accedi pure nell'app.</p>
+  <p>Altrimenti apri Chisly, accedi con email e password e tocca <strong>Invia di nuovo l'email</strong>: ti arriverà un nuovo link.</p>
+</div>
+
+<div class="state state-error">
+  <h1>Qualcosa non ha funzionato</h1>
+  <p>Non siamo riusciti a confermare la tua email. Apri Chisly, accedi con email e password e tocca <strong>Invia di nuovo l'email</strong>.</p>
+</div>
+
+<p>Serve aiuto? Scrivi a <a href="mailto:support@chisly.app">support@chisly.app</a>.</p>
+
+<hr id="en" style="border:none;border-top:1px solid var(--line);margin:40px 0">
+
+<div class="state state-ok">
+  <h2>Email confirmed</h2>
+  <p>Your Chisly account is active. Go back to the app and sign in with your email and password. You can close this page.</p>
+</div>
+<div class="state state-expired">
+  <h2>This link is no longer valid</h2>
+  <p>The confirmation link has expired or has already been used. If you already confirmed, just sign in to the app. Otherwise open Chisly, sign in and tap <strong>Invia di nuovo l'email</strong> (send the email again).</p>
+</div>
+<div class="state state-error">
+  <h2>Something went wrong</h2>
+  <p>We could not confirm your email. Open Chisly, sign in and tap <strong>Invia di nuovo l'email</strong> (send the email again).</p>
+</div>
+<p>Need help? Write to <a href="mailto:support@chisly.app">support@chisly.app</a>.</p>
+
+</main>
+<footer><div class="wrap">Chisly · <a href="mailto:support@chisly.app">support@chisly.app</a></div></footer>
+</body>
+</html>
