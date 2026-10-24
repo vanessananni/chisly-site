@@ -14,7 +14,7 @@
 <main class="wrap">
 
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 22 October 2026 · <a href="privacy.html">Versione italiana</a></p>
+<p class="updated">Last updated: 24 October 2026 · <a href="privacy.html">Versione italiana</a></p>
 
 <p>This policy explains what personal data the <strong>Chisly</strong> app (Android and iOS) processes, why, for how long and what rights you have under Regulation (EU) 2016/679 ("GDPR"). The Italian version prevails in case of differences.</p>
 
@@ -46,6 +46,7 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 <tr><td>Secret Santa</td><td>Participants, pairs who must not draw each other, budget, exchange date, the pairing of each giver with their recipient, whether and when you revealed your pairing</td><td>The group owner; pairings are drawn by the database</td></tr>
 <tr><td>Group collection</td><td>Gift cost, participants and shares, payments and refunds declared, confirmed or rejected, who recorded or decided them and when, in-app notices (for example "the collection was deleted") showing the group name and gift title</td><td>The organiser and the participants</td></tr>
 <tr><td>Payment methods</td><td>How you want to be paid, if you save them in your profile: PayPal.me name, Revolut Revtag, personal Satispay link, IBAN with the account holder's name, free text. We do not process payment cards or sign-in credentials for these services</td><td>You</td></tr>
+<tr><td>Notifications</td><td>If you turn notifications on: the device identifier for notifications (token), the operating system (Android or iOS) and the date you last used the app; your choices about which notifications to receive; the reminders you set (friends' birthdays, votes in your groups); notifications waiting to be sent (to whom, what type, who acted and in which group)</td><td>You and your phone</td></tr>
 <tr><td>Technical data</td><td>IP address, date and time of access, device type and app version, recorded in server logs</td><td>Collected automatically when you use the app</td></tr>
 <tr><td>Support emails</td><td>Your email address and the content of your message, if you write to us</td><td>You</td></tr>
 </table></div>
@@ -53,7 +54,7 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 
 <h2>3. Purposes and legal bases</h2>
 <ul>
-  <li><strong>Providing the service</strong>: creating your account, showing your wishlist to your friends, running groups, invitations, proposals, reservations, votes, comments, Secret Santa and group collections, showing your payment methods to participants in a collection you organise, sending account confirmation, password recovery and email change emails. Legal basis: performance of the contract, i.e. the <a href="terms-en.html">Terms of use</a> you accept when signing up (Art. 6(1)(b) GDPR).</li>
+  <li><strong>Providing the service</strong>: creating your account, showing your wishlist to your friends, running groups, invitations, proposals, reservations, votes, comments, Secret Santa and group collections, showing your payment methods to participants in a collection you organise, sending account confirmation, password recovery and email change emails, sending you the notifications you turned on. Legal basis: performance of the contract, i.e. the <a href="terms-en.html">Terms of use</a> you accept when signing up (Art. 6(1)(b) GDPR).</li>
   <li><strong>Gifts for people who do not use Chisly</strong>: processing the name of a recipient without an account. Legal basis: the legitimate interest of the group members in organising a gift together and ours in providing them with the tool (Art. 6(1)(f) GDPR). We consider it balanced because only a name is stored, the person receives nothing from us and the data is visible only to the group members.</li>
   <li><strong>Security</strong>: preventing abuse and unauthorised access, investigating malfunctions through technical logs. Legal basis: our legitimate interest in keeping the app secure (Art. 6(1)(f) GDPR).</li>
   <li><strong>Support</strong>: replying to the messages you send us. Legal basis: performance of the contract or, for people without an account, our legitimate interest in replying (Art. 6(1)(b) and 6(1)(f) GDPR).</li>
@@ -102,14 +103,15 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 <tr><td>Cloudflare, Inc.</td><td>Management of the chisly.app domain and forwarding of emails sent to support@chisly.app</td><td>Global network; US-based company</td></tr>
 <tr><td>Google (Gmail)</td><td>Mailbox where we receive and handle support emails</td><td>Google group company, with servers also outside the EU</td></tr>
 <tr><td>GitHub, Inc.</td><td>Hosting of this website</td><td>United States</td></tr>
+<tr><td>Google (Firebase Cloud Messaging)</td><td>Delivery of push notifications: processes the device identifier and the notification text</td><td>Google group company, with servers also outside the EU</td></tr>
 </table></div>
-<!-- ENABLE WHEN PUSH NOTIFICATIONS SHIP:
-<p>To send you notifications (for example "there is a new proposal in your group") we use Google Firebase Cloud Messaging and, on Apple devices, the Apple Push Notification service. They process a device identifier and the notification content. You can turn notifications off in your phone settings.</p>
--->
+<h3>Push notifications</h3>
+<p>If you allow it, we send notifications to your phone: friend requests and accepted friendships, requests to join groups you created and answers to your own requests, reminders for votes and for friends' birthdays that you set yourself, and collection shares marked as sent when you are the organiser. They are delivered by Google Firebase Cloud Messaging and, on Apple devices, by Apple's Apple Push Notification service, which process the device identifier and the notification text.</p>
+<p>The text contains at most the username of the person who acted and the group name: <strong>never</strong> gifts, comments, amounts or Secret Santa matches, because notifications can be read on a locked phone. The person receiving a gift never gets notifications about it. You can choose which notifications you receive from your profile and turn them off completely in your phone settings.</p>
 <!-- ENABLE WHEN CRASHLYTICS SHIPS:
 <p>To find and fix app errors we use Google Firebase Crashlytics. When the app closes because of an error, it sends a technical report: device model and operating system, app version, the point in the code where the error occurred, an installation identifier and date and time. The report does not contain the content of your wishlists, groups or messages. Reports are kept for 90 days. Legal basis: our legitimate interest in running the app without errors (Art. 6(1)(f) GDPR).</p>
 -->
-<p>Supabase, Cloudflare, Google and GitHub are companies based in the United States or belonging to US groups. App data is stored in the EU, but access by these providers from the United States cannot be fully excluded. Any such transfer is protected by the Standard Contractual Clauses approved by the European Commission and, where applicable, by the EU-US Data Privacy Framework.</p>
+<p>Supabase, Cloudflare, Google, Apple and GitHub are companies based in the United States or belonging to US groups. App data is stored in the EU, but access by these providers from the United States cannot be fully excluded. Any such transfer is protected by the Standard Contractual Clauses approved by the European Commission and, where applicable, by the EU-US Data Privacy Framework.</p>
 <p>The services you use to pay a collection organiser (PayPal, Revolut, Satispay, your bank) are not our providers: when you open a payment link or make a bank transfer, the relationship is between you and that service, under its terms.</p>
 <p>We do not sell or share your data with anyone else. We may disclose it to authorities only where required by law.</p>
 
@@ -119,6 +121,7 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
   <li><strong>Payment methods</strong>: until you remove them from your profile or delete your account.</li>
   <li><strong>Groups, invitations, proposals, comments, votes, Secret Santa and collections</strong>: as long as the group exists, or until they are deleted by someone allowed to do so. A collection, with its shares and transactions, remains even if the linked gift is deleted. A wrong transaction is not deleted: it is marked as rejected and stays in the collection history.</li>
   <li><strong>Collection notices</strong>: until you mark them as read.</li>
+  <li><strong>Push notifications</strong>: the device identifier is deleted when you sign out, when you delete your account, when Google tells us it is no longer valid and in any case after 60 days without using the app. Notifications already sent or discarded are deleted after 7 days. Preferences and reminders stay until you change them or delete your account; a birthday reminder is also deleted when the friendship ends.</li>
   <li><strong>Recipient without an account</strong>: as long as the group exists, or until the person asks for it to be removed.</li>
   <li><strong>Technical logs</strong>: for the short period set by our providers, normally no more than 30 days.</li>
   <li><strong>Emails sent by the app</strong>: sending records are kept by Brevo for the period set by its service.</li>
@@ -127,7 +130,7 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 
 <h3>What happens when you delete your account</h3>
 <ul>
-  <li>Your account, profile, profile photo, wishlist, notes, friendships, payment methods and notices are deleted.</li>
+  <li>Your account, profile, profile photo, wishlist, notes, friendships, payment methods and notices are deleted, together with your device identifiers, your notification preferences and reminders, and notifications waiting to be sent to you or about something you did.</li>
   <li>Your reservations, votes, comments, join requests and the invitations you received are deleted.</li>
   <li>The gift proposals you created are deleted, together with the reservations, votes and comments other members made on them.</li>
   <li>In classic groups, gift proposals meant for you are deleted too.</li>
