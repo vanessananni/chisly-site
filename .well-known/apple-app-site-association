@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "PG4QZL5LT5.app.chisly",
+          "PG4QZL5LT5.app.chisly.demo",
+          "PG4QZL5LT5.app.chisly.dev"
+        ],
+        "components": [
+          { "/": "/amico", "comment": "Link di invito all'amicizia" },
+          { "/": "/amico/", "comment": "Link di invito all'amicizia" }
+        ]
+      }
+    ]
+  }
+}
