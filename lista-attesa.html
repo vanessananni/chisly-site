@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista d'attesa · Chisly</title>
+<meta name="description" content="Chisly arriva su iOS e Android prima di Natale. Lascia la tua email e ti avvisiamo appena è disponibile.">
+<meta name="theme-color" content="#4A000F">
+<meta property="og:title" content="Chisly arriva prima di Natale">
+<meta property="og:description" content="La wishlist da condividere e i regali di gruppo, senza spoiler per il festeggiato. Ti avvisiamo appena è sugli store.">
+<meta property="og:url" content="https://chisly.app/lista-attesa.html">
+<meta property="og:image" content="https://chisly.app/img/og-lista-attesa.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/chisly_wink.webp">
+<style>
+  /* Poppins (SIL Open Font License), ospitato qui: nessuna richiesta a Google Fonts */
+  @font-face { font-family: "Poppins"; font-weight: 400; font-display: swap; src: url("fonts/poppins-Regular.woff") format("woff"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; font-display: swap; src: url("fonts/poppins-Bold.woff") format("woff"); }
+  :root {
+    --bordeaux: #4A000F;
+    --bordeaux-mid: #7A1F2E;
+    --bordeaux-soft: #F5E6E8;
+    --cream: #FDF0D6;
+    --peach: #F9B95C;
+    --nectarine: #D7897F;
+    --bg: #FAF5F5;
+    --text: #2B1B1E;
+    --muted: #75656A;
+    --border: #EADCDE;
+    --danger: #C62828;
+    --success: #2E7D4F;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--bordeaux); }
+
+  /* Fascia bordeaux */
+  .hero {
+    background: var(--bordeaux);
+    color: #fff;
+    padding: 20px 20px 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after { /* coriandoli leggeri */
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
+    background-image:
+      radial-gradient(circle at 12% 30%, var(--peach) 0 4px, transparent 5px),
+      radial-gradient(circle at 85% 22%, var(--nectarine) 0 5px, transparent 6px),
+      radial-gradient(circle at 72% 70%, var(--peach) 0 3px, transparent 4px),
+      radial-gradient(circle at 25% 78%, var(--nectarine) 0 4px, transparent 5px),
+      radial-gradient(circle at 50% 12%, #fff 0 2px, transparent 3px),
+      radial-gradient(circle at 92% 55%, #fff 0 2px, transparent 3px),
+      radial-gradient(circle at 6% 60%, #fff 0 2px, transparent 3px);
+  }
+  .top { max-width: 960px; margin: 0 auto 28px; display: flex; justify-content: space-between; align-items: center; }
+  .top img { width: 56px; height: auto; border-radius: 8px; display: block; }
+  .top a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 14px; }
+  .mascot {
+    width: 132px; height: 132px; border-radius: 50%; display: block; margin: 0 auto 18px;
+    border: 4px solid var(--peach); box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    animation: bob 3.2s ease-in-out infinite;
+  }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+  @media (prefers-reduced-motion: reduce) { .mascot { animation: none; } }
+  .pill {
+    display: inline-block; background: var(--peach); color: var(--bordeaux); font-weight: 700;
+    font-size: 13px; letter-spacing: .4px; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.12; margin: 0 auto 12px; max-width: 640px; font-weight: 700; }
+  .hero p { margin: 0 auto; max-width: 520px; color: var(--cream); font-size: 18px; }
+
+  /* Scheda del modulo */
+  .card {
+    position: relative; z-index: 1;
+    max-width: 480px; margin: -84px auto 0; background: #fff; border-radius: 24px;
+    padding: 28px 24px 22px; box-shadow: 0 18px 50px rgba(74,0,15,.14); border: 1px solid var(--border);
+  }
+  .card h2 { margin: 0 0 4px; font-size: 22px; color: var(--bordeaux); }
+  .card .sub { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+  .row { display: flex; gap: 10px; }
+  input[type=email] {
+    flex: 1; min-width: 0; padding: 15px 16px; font: inherit; font-size: 17px; border-radius: 14px;
+    border: 1.5px solid var(--border); background: var(--bg); color: var(--text);
+  }
+  input[type=email]:focus { outline: none; border-color: var(--bordeaux); background: #fff; box-shadow: 0 0 0 4px var(--bordeaux-soft); }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; margin: 16px 0; color: var(--muted); cursor: pointer; }
+  .consent input { margin: 2px 0 0; width: 20px; height: 20px; flex: none; accent-color: var(--bordeaux); }
+  .btn {
+    display: block; width: 100%; padding: 15px; font: inherit; font-size: 17px; font-weight: 700; border: 0;
+    border-radius: 14px; background: var(--bordeaux); color: #fff; cursor: pointer; transition: transform .1s, background .2s;
+  }
+  .btn:hover { background: var(--bordeaux-mid); }
+  .btn:active { transform: scale(.98); }
+  .btn[disabled] { opacity: .6; cursor: default; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .msg { display: none; margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; font-size: 15px; }
+  .msg.show { display: block; }
+  #msg-ok { background: #EAF5EE; color: var(--success); }
+  #msg-err { background: #FDECEC; color: var(--danger); }
+  .fine { text-align: center; font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+  .stores { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .stores span { font-size: 13px; color: var(--bordeaux); background: var(--bordeaux-soft); padding: 4px 10px; border-radius: 999px; }
+
+  /* Funzioni */
+  .features { max-width: 960px; margin: 56px auto 0; padding: 0 20px; }
+  .features h2 { text-align: center; font-size: 26px; margin: 0 0 24px; color: var(--bordeaux); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  .f { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 20px; text-align: center; }
+  .f img { width: 84px; height: 84px; border-radius: 50%; display: block; margin: 0 auto 10px; }
+  .f h3 { margin: 0 0 4px; font-size: 17px; color: var(--bordeaux); }
+  .f p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .promise { max-width: 640px; margin: 48px auto 0; padding: 0 20px; text-align: center; color: var(--muted); font-size: 15px; }
+  footer { margin-top: 56px; padding: 24px 20px 32px; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); margin: 0 8px; }
+
+  @media (max-width: 420px) {
+    .hero { padding-bottom: 110px; }
+    .card { margin-left: 14px; margin-right: 14px; padding: 24px 18px 20px; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .f { padding: 14px 10px; border-radius: 16px; }
+    .f img { width: 64px; height: 64px; }
+    .f h3 { font-size: 15px; }
+    .f p { font-size: 13px; line-height: 1.45; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="top">
+    <a href="./"><img src="img/chisly_logo.webp" alt="Chisly" width="56" height="51"></a>
+    <a href="#funzioni">Cosa fa →</a>
+  </div>
+  <img class="mascot" src="img/chisly_wink.webp" alt="" width="132" height="132">
+  <span class="pill">Prima di Natale su iOS e Android</span>
+  <h1>Il regalo giusto, senza spoiler.</h1>
+  <p>La wishlist da condividere con gli amici e i regali da organizzare in gruppo, senza che il festeggiato sappia niente.</p>
+</section>
+
+<!--
+  Indirizzo del modulo Brevo: Contatti › Moduli › (modulo "Lista d'attesa Chisly") › Condividi › HTML,
+  copiare il valore di action="https://….sibforms.com/serve/…" qui sotto.
+-->
+<form class="card" id="wait" method="POST" action="https://42a66b10.sibforms.com/serve/MUIFAPYDj89MdicmcjrU7ea2BIPqK3olYQwrLjdo3c8FCYiIORecnT_a_9SkXw6YEL-aH_5LXcSeOHouhtA40iL66OXG6XEqy127XJpkxYG5vKagUmwACbYof0NNPAh5LysclFJEDhHLbBRLbGz8B7L8u098cMXaVU9wpKOEh_6uSYlcWPC-Q9hfWVR8XF4nqhtxJxdk4ayZlJBD7Q==" novalidate>
+  <h2>Entra nella lista d'attesa</h2>
+  <p class="sub">Ti scriviamo appena Chisly è sugli store. Solo questo, promesso.</p>
+
+  <label class="row" for="EMAIL" style="display:block">
+    <span class="hp">La tua email</span>
+    <input type="email" id="EMAIL" name="EMAIL" autocomplete="email" inputmode="email" placeholder="La tua email" required style="width:100%">
+  </label>
+
+  <label class="consent">
+    <input type="checkbox" name="OPT_IN" value="1" required>
+    <span>Voglio ricevere un'email quando Chisly è disponibile e, al massimo una volta al mese fino al lancio, le novità sull'app. Ho letto l'<a href="privacy.html#lista-attesa">informativa</a>.</span>
+  </label>
+
+  <!-- campi richiesti da Brevo -->
+  <div class="hp" aria-hidden="true"><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off"></div>
+  <input type="hidden" name="locale" value="it">
+
+  <button class="btn" type="submit" id="send">Avvisami</button>
+  <p class="msg" id="msg-ok" role="status"><strong>Ci siamo quasi!</strong> Ti abbiamo mandato un'email: tocca il link per confermare. Non la trovi? Guarda nello spam o in Promozioni.</p>
+  <p class="msg" id="msg-err" role="alert">Qualcosa non ha funzionato. Riprova tra poco, oppure scrivi a <a href="mailto:support@chisly.app">support@chisly.app</a>.</p>
+  <div class="stores"><span>App Store</span><span>Google Play</span></div>
+  <p class="fine">Niente pubblicità né cessione a terzi. Ti cancelli con un clic da ogni email.</p>
+</form>
+
+<section class="features" id="funzioni">
+  <h2>Cosa puoi fare con Chisly</h2>
+  <div class="grid">
+    <div class="f">
+      <img src="img/chisly_love.webp" alt="" width="84" height="84" loading="lazy">
+      <h3>La tua wishlist</h3>
+      <p>Privata o visibile agli amici, con i preferiti in cima. Basta un link dal negozio.</p>
+    </div>
+    <div class="f">
+      <img src="img/chisly_peek.webp" alt="" width="84" height="84" loading="lazy">
+      <h3>Idee segrete</h3>
+      <p>Segna le idee regalo per gli amici quando ti vengono. Le vedi solo tu.</p>
+    </div>
+    <div class="f">
+      <img src="img/chisly_party.webp" alt="" width="84" height="84" loading="lazy">
+      <h3>Regali di gruppo</h3>
+      <p>Proponete, votate e prenotate. Colletta inclusa. Il festeggiato non vede niente.</p>
+    </div>
+    <div class="f">
+      <img src="img/chisly_christmas.webp" alt="" width="84" height="84" loading="lazy">
+      <h3>Secret Santa</h3>
+      <p>Sorteggia l'app, con coppie escluse e budget. Ognuno scopre solo il suo.</p>
+    </div>
+  </div>
+</section>
+
+<p class="promise">Niente pubblicità, niente tracciamento. I dati dell'app restano su server nell'Unione Europea.</p>
+
+<footer>
+  <a href="privacy.html">Privacy</a><a href="termini.html">Termini</a><a href="mailto:support@chisly.app">support@chisly.app</a>
+  <div style="margin-top:8px">Chisly · Vanessa Larivei</div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('wait');
+  var btn = document.getElementById('send');
+  var ok = document.getElementById('msg-ok');
+  var err = document.getElementById('msg-err');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    ok.classList.remove('show'); err.classList.remove('show');
+    var email = form.EMAIL.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { form.EMAIL.focus(); return; }
+    if (!form.OPT_IN.checked) { form.OPT_IN.focus(); return; }
+    if (form.email_address_check.value) return; // bot
+    btn.disabled = true; btn.textContent = 'Un attimo…';
+    var data = new FormData(form);
+    data.append('isAjax', '1');
+    fetch(form.action, { method: 'POST', body: data })
+      .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+      .then(function (res) {
+        if (res && res.success) { ok.classList.add('show'); form.EMAIL.value = ''; form.OPT_IN.checked = false; }
+        else { err.classList.add('show'); }
+      })
+      .catch(function () { err.classList.add('show'); })
+      .finally(function () { btn.disabled = false; btn.textContent = 'Avvisami'; });
+  });
+})();
+</script>
+</body>
+</html>

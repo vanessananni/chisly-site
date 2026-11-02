@@ -14,7 +14,7 @@
 <main class="wrap">
 
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 24 October 2026 · <a href="privacy.html">Versione italiana</a></p>
+<p class="updated">Last updated: 2 November 2026 · <a href="privacy.html">Versione italiana</a></p>
 
 <p>This policy explains what personal data the <strong>Chisly</strong> app (Android and iOS) processes, why, for how long and what rights you have under Regulation (EU) 2016/679 ("GDPR"). The Italian version prevails in case of differences.</p>
 
@@ -65,7 +65,10 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 <h2>4. Who sees your data in the app</h2>
 <ul>
   <li><strong>All registered users</strong> can find you by username and see your username and profile picture.</li>
+  <li><strong>Search by first and last name</strong>: only if you turn on «Let people find me by name» in your profile (it is off until you turn it on), registered users can find you by searching your first and last name and see them next to your username. You can turn it off at any time. Legal basis: your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time.</li>
+  <li><strong>Invite links</strong>: if you share your invite link, it contains your username; whoever opens it sees your username and decides whether to send you a friend request.</li>
   <li><strong>Your friends</strong> (accepted friendship) also see your name, birthday, bio and the wishes you made visible to friends.</li>
+  <li><strong>Members of a shared list</strong> see your username and picture, all wishes in the list and who added them, and can edit them. Nobody else, not even their friends, sees the list.</li>
   <li><strong>Members of your groups</strong> see your username and picture, the proposals you make, the comments you write and, depending on group settings, who proposed or reserved a gift and the votes once voting has closed.</li>
   <li><strong>The person receiving a gift</strong> never sees the proposals, reservations, comments, votes and collection about them.</li>
   <li><strong>People invited to a group</strong> see its name, description and type and who invited them, but not its members or proposals until they join.</li>
@@ -99,14 +102,14 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 <div class="table-scroll"><table>
 <tr><th>Provider</th><th>Service</th><th>Location</th></tr>
 <tr><td>Supabase Inc.</td><td>Database, authentication, profile photo storage</td><td>Servers in the EU (Frankfurt, Germany)</td></tr>
-<tr><td>Sendinblue SAS (Brevo)</td><td>Sending the app's emails (account confirmation, password recovery, email change, security notices): processes your email address, the email content and delivery data (for example whether the email was delivered or bounced)</td><td>European Union (France)</td></tr>
+<tr><td>Sendinblue SAS (Brevo)</td><td>Sending the app's emails (account confirmation, password recovery, email change, security notices) and managing the waiting list (see section 13): processes your email address, the email content and delivery data (for example whether the email was delivered or bounced)</td><td>European Union (France)</td></tr>
 <tr><td>Cloudflare, Inc.</td><td>Management of the chisly.app domain and forwarding of emails sent to support@chisly.app</td><td>Global network; US-based company</td></tr>
 <tr><td>Google (Gmail)</td><td>Mailbox where we receive and handle support emails</td><td>Google group company, with servers also outside the EU</td></tr>
 <tr><td>GitHub, Inc.</td><td>Hosting of this website</td><td>United States</td></tr>
 <tr><td>Google (Firebase Cloud Messaging)</td><td>Delivery of push notifications: processes the device identifier and the notification text</td><td>Google group company, with servers also outside the EU</td></tr>
 </table></div>
 <h3>Push notifications</h3>
-<p>If you allow it, we send notifications to your phone: friend requests and accepted friendships; requests to join groups you created and answers to your own requests; group invitations; the Secret Santa draw (without saying who you got); new comments on gifts you proposed, reserved or commented on (without the text); reminders for votes and for friends' birthdays that you set yourself; shares marked as sent when you organise a collection, and the other collection notices. Notifications never show gift titles, comment text or amounts, and the person being celebrated receives nothing about the group organised for them. They are delivered by Google Firebase Cloud Messaging and, on Apple devices, by Apple's Apple Push Notification service, which process the device identifier and the notification text.</p>
+<p>If you allow it, we send notifications to your phone: friend requests and accepted friendships; invitations to shared lists; requests to join groups you created and answers to your own requests; group invitations; the Secret Santa draw (without saying who you got); new comments on gifts you proposed, reserved or commented on (without the text); reminders for votes and for friends' birthdays that you set yourself; the end of a vote; shares marked as sent when you organise a collection, confirmation or rejection of your payments, and the other collection notices. Notifications never show gift titles, comment text or amounts, and the person being celebrated receives nothing about the group organised for them. They are delivered by Google Firebase Cloud Messaging and, on Apple devices, by Apple's Apple Push Notification service, which process the device identifier and the notification text.</p>
 <p>The text contains at most the username of the person who acted and the group name: <strong>never</strong> gifts, comments, amounts or Secret Santa matches, because notifications can be read on a locked phone. The person receiving a gift never gets notifications about it. You can choose which notifications you receive from your profile and turn them off completely in your phone settings.</p>
 <!-- ENABLE WHEN CRASHLYTICS SHIPS:
 <p>To find and fix app errors we use Google Firebase Crashlytics. When the app closes because of an error, it sends a technical report: device model and operating system, app version, the point in the code where the error occurred, an installation identifier and date and time. The report does not contain the content of your wishlists, groups or messages. Reports are kept for 90 days. Legal basis: our legitimate interest in running the app without errors (Art. 6(1)(f) GDPR).</p>
@@ -124,6 +127,7 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
   <li><strong>Push notifications</strong>: the device identifier is deleted when you sign out, when you delete your account, when Google tells us it is no longer valid and in any case after 60 days without using the app. Notifications already sent or discarded are deleted after 7 days. Preferences and reminders stay until you change them or delete your account; a birthday reminder is also deleted when the friendship ends.</li>
   <li><strong>Recipient without an account</strong>: as long as the group exists, or until the person asks for it to be removed.</li>
   <li><strong>Technical logs</strong>: for the short period set by our providers, normally no more than 30 days.</li>
+  <li><strong>Waiting list</strong>: until 3 months after the app is released on the stores, then the address is deleted; earlier if you unsubscribe through the link in the emails or ask us.</li>
   <li><strong>Emails sent by the app</strong>: sending records are kept by Brevo for the period set by its service.</li>
   <li><strong>Support emails</strong>: as long as needed to handle the request and in any case no longer than 24 months.</li>
 </ul>
@@ -158,7 +162,15 @@ Privacy contact: <a href="mailto:support@chisly.app">support@chisly.app</a></p>
 <!-- BEFORE PUBLISHING: check with "Show original" that Brevo emails have no tracking pixel or rewritten links (infra/docs/email-supabase.md). If tracking cannot be turned off, remove the sentence about emails. -->
 <p>The app uses no cookies, advertising, tracking or analytics tools. The app's emails contain no tracking pixels. This website (chisly.app) is published with GitHub Pages, which may log visitors' IP addresses for security purposes; the site sets no cookies.</p>
 
-<h2>13. Changes</h2>
+<h2 id="waiting-list">13. Waiting list</h2>
+<p>If you join the <a href="lista-attesa.html">waiting list</a> on the website, we process your email address, the date of sign-up and confirmation and your language, to tell you when Chisly is available and send you at most one email a month with news about the app until launch.</p>
+<ul>
+  <li><strong>Legal basis</strong>: your consent (Art. 6.1.a GDPR), given by ticking the box and confirming through the link we email you (double opt-in). You can withdraw it at any time through the link at the bottom of every email or by writing to <a href="mailto:support@chisly.app">support@chisly.app</a>, with no consequences.</li>
+  <li><strong>Provider</strong>: Brevo (Sendinblue SAS, France, EU) stores the list and sends the emails. Waiting-list emails contain no tracking pixels and links are not rewritten.</li>
+  <li><strong>Retention</strong>: until 3 months after the app is released on the stores; then the list is deleted. Joining the list does not create a Chisly account.</li>
+</ul>
+
+<h2>14. Changes</h2>
 <p>If we change this policy in a significant way (for example adding a new provider or a new use of data), we will let you know in the app before the changes take effect. The date at the top shows the latest version.</p>
 
 </main>

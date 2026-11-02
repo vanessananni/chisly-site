@@ -1,0 +1,18 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.chisly",
+      "sha256_cert_fingerprints": ["SOSTITUIRE:CON:SHA256:DELLA:CHIAVE:DI:FIRMA:DI:PLAY:APP:SIGNING"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.chisly.dev",
+      "sha256_cert_fingerprints": ["SOSTITUIRE:CON:SHA256:DELLA:CHIAVE:DI:DEBUG"]
+    }
+  }
+]
