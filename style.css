@@ -168,6 +168,8 @@ body.home main { padding: 0; }
 .hero .ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .hero .btn.secondary { color: #fff; border-color: rgba(255,255,255,.6); }
 .hero .btn.secondary:hover { background: rgba(255,255,255,.1); }
+.hero .android-note { font-size: 15px; margin: 18px auto 0; }
+.hero .android-note a, .cta-band p a { color: var(--peach); }
 
 .section { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 .section h2 { border: 0; padding: 0; text-align: center; font-size: clamp(24px, 3.6vw, 32px); margin: 64px 0 8px; }
